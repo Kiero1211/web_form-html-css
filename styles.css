@@ -161,7 +161,7 @@ padding: 32px 32px 40px 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    gap: 34px;
+    gap: 30px;
 }
 
 .personal label {
@@ -259,6 +259,11 @@ input[type='radio']:checked + label::before {
     color: #262764;
 }
 
+.text-box textarea {
+    resize: none;
+    max-height: 200px;
+}
+
 .btn-wrapper {
     display: flex;
     justify-content: flex-end;
@@ -277,4 +282,18 @@ input[type='radio']:checked + label::before {
 
 .btn:hover {
     opacity: 0.9;
+}
+
+
+/* Validation */
+.error {
+    transform: translateY(50%);
+    color: red;
+    font-size: 1.3rem;
+    visibility: hidden;
+}
+
+.form-group:has(:invalid:not(:placeholder-shown)) .error,
+.text-box:has(:invalid:not(:placeholder-shown)) .error{
+    visibility: visible;
 }
